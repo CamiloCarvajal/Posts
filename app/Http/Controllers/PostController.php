@@ -14,5 +14,10 @@ class PostController extends Controller {
                 ['posts' => Post::latest()->paginate()]
         );
     }
+    
+    public function destroy(Post $post) {
+        $post->delete();
+        return back();
+    }
 
 }
